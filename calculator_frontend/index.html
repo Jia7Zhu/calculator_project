@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>在线计算器</title>
+
+    <!-- 引入 CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>在线计算器</h1>
+
+        <!-- 计算器 -->
+        <div class="calculator">
+
+            <!-- 表达式输入框 -->
+            <input
+                id="display"
+                type="text"
+                placeholder="请输入表达式，例如：(1+2)*3"
+            >
+
+            <!-- 第一行 -->
+            <div class="button-row">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="deleteLast()">⌫</button>
+                <button onclick="appendValue('(')">(</button>
+                <button onclick="appendValue(')')">)</button>
+            </div>
+
+            <!-- 第二行 -->
+            <div class="button-row">
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('/')">÷</button>
+            </div>
+
+            <!-- 第三行 -->
+            <div class="button-row">
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('*')">×</button>
+            </div>
+
+            <!-- 第四行 -->
+            <div class="button-row">
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('-')">−</button>
+            </div>
+
+            <!-- 第五行 -->
+            <div class="button-row">
+                <button onclick="appendValue('0')">0</button>
+                <button onclick="appendValue('.')">.</button>
+                <button onclick="appendValue('+')">+</button>
+                <button class="equal-button" onclick="calculate()">=</button>
+            </div>
+
+            <!-- 结果 -->
+            <div id="result">
+                计算结果：
+            </div>
+
+            <!-- 错误信息 -->
+            <div id="message"></div>
+
+        </div>
+
+        <!-- 历史记录 -->
+        <div class="history">
+
+            <h2>计算历史</h2>
+
+            <button class="refresh-button" onclick="loadHistory()">
+                刷新历史记录
+            </button>
+
+            <div id="history-list">
+                暂无历史记录
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 引入 JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
